@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Face Detection & Recognition System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-robot"></i> Neural Vision AI</h1>
+            <p class="subtitle">Advanced Face Detection & Recognition System</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="video-container">
+                <video id="video" width="640" height="480" autoplay></video>
+                <canvas id="canvas" width="640" height="480"></canvas>
+                <div class="overlay">
+                    <div class="emotion-indicator" id="emotionIndicator">
+                        <i class="fas fa-smile"></i>
+                        <span>Analyzing...</span>
+                    </div>
+                    <div class="person-name" id="personNameIndicator">
+                        <i class="fas fa-user"></i>
+                        <span>Unknown</span>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <span class="label">Confidence</span>
+                            <span class="value" id="confidenceValue">0%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Age</span>
+                            <span class="value" id="ageValue">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="glow-button">
+                    <i class="fas fa-camera"></i>
+                    Start Camera
+                </button>
+                <button id="captureBtn" class="glow-button">
+                    <i class="fas fa-camera-retro"></i>
+                    Capture Face
+                </button>
+                <button id="recognizeBtn" class="glow-button">
+                    <i class="fas fa-search"></i>
+                    Recognize Face
+                </button>
+            </div>
+
+            <div class="analysis-panel">
+                <div class="results">
+                    <h2><i class="fas fa-chart-bar"></i> Analysis Results</h2>
+                    <div class="results-grid" id="detectionResults">
+                        <div class="result-card emotion">
+                            <h3>Emotion Analysis</h3>
+                            <div class="emotion-chart" id="emotionChart"></div>
+                        </div>
+                        <div class="result-card features">
+                            <h3>Facial Features</h3>
+                            <ul id="featuresList"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="known-faces">
+                    <h2><i class="fas fa-users"></i> Known Faces Database</h2>
+                    <div class="known-faces-grid" id="knownFacesList"></div>
+                    <div class="add-face">
+                        <input type="text" id="personName" placeholder="Enter person's name">
+                        <button id="addFaceBtn" class="glow-button">
+                            <i class="fas fa-user-plus"></i>
+                            Add to Database
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
