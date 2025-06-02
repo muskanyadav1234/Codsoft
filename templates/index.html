@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision Analysis System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="glassmorphism">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1>Image Capturing System</h1>
+            <p>Next-Gen Image Capturing Adavance AI</p>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">System Ready</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="camera-section glassmorphism">
+                <div class="video-wrapper">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas"></canvas>
+                    <div class="camera-overlay">
+                        <div class="corner top-left"></div>
+                        <div class="corner top-right"></div>
+                        <div class="corner bottom-left"></div>
+                        <div class="corner bottom-right"></div>
+                        <div class="focus-indicator"></div>
+                    </div>
+                    <div class="camera-instructions">
+                        <p>Position subject in frame</p>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn capture-btn" title="Take a photo">
+                        <i class="fas fa-camera-retro"></i> Capture
+                    </button>
+                    <button class="btn analyze-btn" title="Analyze captured image">
+                        <i class="fas fa-microchip"></i> Analyze
+                    </button>
+                    <button class="btn switch-camera-btn" title="Switch camera">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card glassmorphism">
+                    <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Face Detection</h3>
+                    <div id="faceResults" class="result-content">
+                        <div class="pulse-animation">Waiting for analysis...</div>
+                    </div>
+                    <div class="confidence-meter">
+                        <div class="meter-fill"></div>
+                    </div>
+                </div>
+
+                <div class="result-card glassmorphism">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Object Recognition</h3>
+                    <div id="objectResults" class="result-content">
+                        <div class="pulse-animation">Waiting for analysis...</div>
+                    </div>
+                    <div class="confidence-meter">
+                        <div class="meter-fill"></div>
+                    </div>
+                </div>
+
+                <div class="result-card glassmorphism">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI Analysis</h3>
+                    <div id="analysisResults" class="result-content">
+                        <div class="pulse-animation">Waiting for analysis...</div>
+                    </div>
+                    <div class="confidence-meter">
+                        <div class="meter-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2>Advanced Capabilities</h2>
+                <div class="features-grid">
+                    <div class="feature glassmorphism">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h4>Neural Face Detection</h4>
+                        <p>State-of-the-art facial recognition system</p>
+                        <div class="feature-status active">Active</div>
+                    </div>
+                    <div class="feature glassmorphism">
+                        <div class="feature-icon">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h4>Smart Recognition</h4>
+                        <p>Advanced object detection & classification</p>
+                        <div class="feature-status active">Active</div>
+                    </div>
+                    <div class="feature glassmorphism">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Deep Learning</h4>
+                        <p>Powered by neural network technology</p>
+                        <div class="feature-status active">Active</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="glassmorphism">
+            <p>© 2024 AI Image Capturing System | <span class="system-status">System Online</span></p>
+        </footer>
+    </div>
+
+    <div class="particles" id="particles-js"></div>
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
